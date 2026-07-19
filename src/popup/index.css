@@ -1,0 +1,287 @@
+:root {
+  --bg: #ffffff;
+  --panel: #f4f6f8;
+  --text: #1d2226;
+  --muted: #6b7580;
+  --border: #e2e6ea;
+  --accent: #0a66c2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  width: 340px;
+  padding: 14px 16px 18px;
+}
+
+.app.loading {
+  color: var(--muted);
+  text-align: center;
+  padding: 32px;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+header h1 {
+  font-size: 17px;
+  margin: 0;
+  color: var(--accent);
+}
+
+.window-label {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+h2 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 16px 0 8px;
+}
+
+.detected-note {
+  background: #eef5fc;
+  border: 1px solid #cfe2f5;
+  color: #0a4a86;
+  font-size: 12px;
+  padding: 7px 9px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.warning {
+  background: #fdecea;
+  border: 1px solid #f5c6c2;
+  color: #a12820;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 9px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* Gauge */
+.gauge {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.gauge-numbers {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.gauge-numbers .big {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.gauge-numbers .sub {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.bar {
+  height: 8px;
+  background: #e2e6ea;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 10px 0 6px;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.gauge-legend {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Tiles */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tile {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 6px;
+  text-align: center;
+}
+
+.tile-num {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.tile-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
+/* History */
+.history {
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+  height: 96px;
+}
+
+.hist-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  height: 100%;
+}
+
+.hist-bar-wrap {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hist-bar {
+  width: 100%;
+  min-height: 2px;
+  background: var(--accent);
+  border-radius: 3px 3px 0 0;
+}
+
+.hist-count {
+  font-size: 10px;
+  color: var(--text);
+}
+
+.hist-label {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slots li,
+.recent li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.slots li:last-child,
+.recent li:last-child {
+  border-bottom: none;
+}
+
+.recent-name a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.recent-name a:hover {
+  text-decoration: underline;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.empty {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Settings */
+.settings label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.settings select,
+.settings input {
+  font-size: 12px;
+  padding: 4px 6px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  width: 90px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.reset-detected {
+  font-size: 11px;
+  color: var(--accent);
+  background: none;
+  border: none;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b1f23;
+    --panel: #262b30;
+    --text: #e8eaed;
+    --muted: #9aa4ad;
+    --border: #363c42;
+    --accent: #6cb1f0;
+  }
+  .bar {
+    background: #363c42;
+  }
+  .detected-note {
+    background: #12283d;
+    border-color: #1d3f5e;
+    color: #9fcbf2;
+  }
+  .warning {
+    background: #3a1d1a;
+    border-color: #5e2b26;
+    color: #f0a89f;
+  }
+}
